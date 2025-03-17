@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Feed from "../Feed/Feed";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Home.css";
 
 const Home = ({ isSidebarCollapsed }) => {
+  const [category, setCategory] = useState(0)
   return (
     <div>
-      <Sidebar isSidebarCollapsed={isSidebarCollapsed} />
+      <Sidebar
+        isSidebarCollapsed={isSidebarCollapsed}
+        category={category}
+        setCategory={setCategory}
+      />
       <div
         className={`container ${
           isSidebarCollapsed ? "" : "expanded-container"
         }`}
       >
-        <Feed />
+        <Feed category={category}/>
       </div>
     </div>
   );
