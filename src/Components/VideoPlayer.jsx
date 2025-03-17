@@ -2,28 +2,63 @@ import { CopyPlus, Share2, ThumbsDown, ThumbsUp } from "lucide-react";
 import moment from "moment";
 import React, { useEffect, useState } from 'react';
 import "../Containers/Feed/Feed.css";
-import ChannelLogo from "../assets/afternoon-icon.svg";
 import { viewCountConverter } from "../utils";
 const VideoPlayer = ({ videoId, categoryId }) => {
 
-  const [videoDetails, setVideoDetails] = useState([]);
+  const [videoDetails, setVideoDetails] = useState(null);
+  const [channelInfo, setChannelInfo] = useState(null)
+  const [videoComments, setVideoComments] = useState([])
 
   const apiKey = import.meta.env.VITE_API_KEY;
-  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${apiKey}`;
+  const UrlEndPoints = {VIDEOS : "videos", CHANNEL : "channels"};
+  const baseUrl = `https://www.googleapis.com/youtube/v3`;
+  const urlParts = `?part=snippet%2CcontentDetails%2Cstatistics`;
 
   const fetchVideoData = async () =>{
+    const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${apiKey}`;
+
     const response = await fetch(API_URL);
-    const videoDetailsData = await response.json();
-    console.log("videoDetailsData", videoDetailsData);
-    
-    setVideoDetails(videoDetailsData.items[0]);
+    const videoDetailsData = await response.json();    
+  if (videoDetailsData?.items?.length > 0) {
+    setVideoDetails(videoDetailsData.items[0]); 
+  }
+  }
+
+
+  const fetchVideoComments = async () => {
+    const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=70&videoId=${videoId}&key=${apiKey}`;
+    const res = await fetch(url);
+    const commentData = await res.json();
+    console.log(" commentData", commentData);
+
+    if (commentData?.items?.length > 0) {
+      setVideoComments(commentData?.items);
+    }
+  };
+
+
+  const fetchChannelData = async() => {
+     if (!videoDetails?.snippet?.channelId) return;
+    const channelId = videoDetails.snippet.channelId;
+    const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${channelId}&key=${apiKey}`;
+     const response = await fetch(url);
+     const channelData = await response.json();
+     
+     if (channelData?.items?.length > 0) {
+       setChannelInfo(channelData?.items[0]);
+     }
+      fetchVideoComments();
   }
 
   useEffect(() => {
-     fetchVideoData()
+     fetchVideoData();
   }, [videoId])
 
-  console.log("videoDetails", videoDetails);
+  useEffect(() => {
+     fetchChannelData();
+  }, [videoDetails])
+
+
   
   return (
     <div className="play-video">
@@ -77,11 +112,21 @@ const VideoPlayer = ({ videoId, categoryId }) => {
       </div>
       <hr />
       <div className="publisher flex-div">
-        <img src={ChannelLogo} alt="publisher image" />
+        <img
+          src={
+            channelInfo ? channelInfo?.snippet?.thumbnails?.default?.url : ""
+          }
+          alt="publisher image"
+        />
 
         <div className="publisher-info-container">
           <p>{videoDetails ? videoDetails?.snippet?.channelTitle : ""}</p>
-          <span>1million Subscribers</span>
+          <span>
+            {channelInfo
+              ? viewCountConverter(channelInfo?.statistics?.subscriberCount)
+              : ""}{" "}
+            Subscribers
+          </span>
         </div>
         <button className="subscribe-cta">Subscribe</button>
       </div>
@@ -97,24 +142,48 @@ const VideoPlayer = ({ videoId, categoryId }) => {
             ? viewCountConverter(videoDetails?.statistics?.commentCount)
             : ""}
         </p>
-        <h4>130 comments</h4>
 
-        <div className="comment">
-          <img src="" alt="user profile" />
-          <div>
-            <h3>
-              USERNAME <span>1 day ago</span>
-            </h3>
-            <p>comment</p>
+        {videoComments?.map((comment, index) => {
+          return (
+            <div className="comment" key={comment?.id}>
+              <img
+                src={
+                  comment?.snippet?.topLevelComment?.snippet
+                    ?.authorProfileImageUrl
+                }
+                alt="user profile"
+              />
+              <div>
+                <h3>
+                  {
+                    comment?.snippet?.topLevelComment?.snippet
+                      ?.authorDisplayName
+                  }
+                  <span>
+                    {videoComments
+                      ? moment(
+                          comment?.snippet?.topLevelComment?.snippet
+                            ?.publishedAt
+                        ).fromNow()
+                      : ""}
+                  </span>
+                </h3>
+                <p>{comment?.snippet?.topLevelComment?.snippet?.textDisplay}</p>
 
-            <div className="flex-div comment-action">
-              <ThumbsUp size={20} style={{ marginRight: "5px" }} />
-              <span>233</span>
-              <ThumbsDown size={20} style={{ marginRight: "5px" }} />
-              <span>12</span>
+                <div className="flex-div comment-action">
+                  <ThumbsUp size={20} style={{ marginRight: "5px" }} />
+                  <span>
+                    {viewCountConverter(
+                      comment?.snippet?.topLevelComment?.snippet?.likeCount
+                    )}
+                  </span>
+                  <ThumbsDown size={20} style={{ marginRight: "5px" }} />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
+        <h4>{videoComments?.length} Comments</h4>
       </div>
     </div>
   );
