@@ -52,10 +52,10 @@ const VideoPlayer = () => {
             </h3>
             <p>comment</p>
 
-            <div className="comment-action">
-              <ThumbsUp />
+            <div className="flex-div comment-action">
+              <ThumbsUp size={20} style={{ marginRight: "5px" }} />
               <span>233</span>
-              <ThumbsDown />
+              <ThumbsDown size={20} style={{ marginRight: "5px" }} />
               <span>12</span>
             </div>
           </div>
