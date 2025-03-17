@@ -36,7 +36,7 @@
   flex-basis:  69%;
 }
 
-.play-video video {
+.play-video iframe {
   width: 100%;
 }
 
