@@ -66,7 +66,8 @@ const VideoPlayer = ({ }) => {
     <div className="play-video">
       {videoId ? (
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}autocontrols=1`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          frameBorder={0}
           title={videoDetails?.snippet?.title || "Video Player"}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"

@@ -9,3 +9,11 @@
 .expanded-container {
     padding-left: 7%;
 }
+
+@media (max-width: 900px) {
+  .expanded-container, .container {
+   padding-left: 5%;
+   padding-right: 5%;
+  }
+
+}

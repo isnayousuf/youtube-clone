@@ -37,3 +37,28 @@ nav {
   width: 70px;
   border-radius: 50%;
 }
+
+@media (max-width: 900px) {
+  .menu-icon {
+    display: none;
+  }
+
+   .nav-right img {
+    /* check this with your icons */
+    display: none; 
+  }
+
+   .nav-right .user-icon {
+    display: block; 
+    width: 30px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .nav-middle .search-box input {
+    width: 100px;
+  }
+  
+}
