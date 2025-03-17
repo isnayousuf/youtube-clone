@@ -1,0 +1,39 @@
+nav {
+  padding: 10px;
+  justify-content: space-between;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-left .menu-icon {
+   width: 22px;
+   margin-left: 25px;
+}
+
+.nav-left .logo {
+  width: 130px;
+  height: 20px;
+}
+
+.nav-middle .search-box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 15px;
+  padding: 8px 12px;
+}
+
+.nav-middle .search-box input {
+  width: 400px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Todo: check this with profile icon and add styling accordingly */
+.nav-right .user-icon {
+  width: 70px;
+  border-radius: 50%;
+}
