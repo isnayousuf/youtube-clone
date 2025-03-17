@@ -1,9 +1,12 @@
 import { CopyPlus, Share2, ThumbsDown, ThumbsUp } from "lucide-react";
 import moment from "moment";
 import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 import "../Containers/Feed/Feed.css";
 import { viewCountConverter } from "../utils";
-const VideoPlayer = ({ videoId, categoryId }) => {
+const VideoPlayer = ({ }) => {
+
+  const {videoId} = useParams();
 
   const [videoDetails, setVideoDetails] = useState(null);
   const [channelInfo, setChannelInfo] = useState(null)
@@ -29,7 +32,6 @@ const VideoPlayer = ({ videoId, categoryId }) => {
     const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=70&videoId=${videoId}&key=${apiKey}`;
     const res = await fetch(url);
     const commentData = await res.json();
-    console.log(" commentData", commentData);
 
     if (commentData?.items?.length > 0) {
       setVideoComments(commentData?.items);
