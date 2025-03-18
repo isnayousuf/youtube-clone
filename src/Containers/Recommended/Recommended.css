@@ -3,6 +3,7 @@
 }
 
 .recommended-video-list {
+
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
@@ -11,6 +12,7 @@
 .recommended-video-list img {
   flex-basis: 49%;
   width: 50%;
+  border-radius: 12px;
 }
 
 .video-info {
@@ -18,8 +20,20 @@
 }
 
 .video-info h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.video-info .channel-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.video-info .channel-statistics {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 900px) {

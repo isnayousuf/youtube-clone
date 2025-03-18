@@ -25,7 +25,6 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 0 ? "active" : ""}`}
           onClick={() => handleCategoryChange(0)}
         >
-          {/* <HomeIcon size={24} className="side-icon" /> */}
           <House size={24} className="side-icon" />
           <p>Home</p>
         </div>

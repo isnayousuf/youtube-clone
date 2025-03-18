@@ -1,4 +1,4 @@
-import { CopyPlus, Share2, ThumbsDown, ThumbsUp } from "lucide-react";
+import { Ellipsis, Share2, ThumbsDown, ThumbsUp } from "lucide-react";
 import moment from "moment";
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
@@ -82,73 +82,83 @@ const VideoPlayer = ({ }) => {
           : "Video Title"}
       </h3>
       <div className="play-video-info flex-div">
-        <p>
+        <div className="publisher flex-div">
+          <img
+            src={
+              channelInfo ? channelInfo?.snippet?.thumbnails?.default?.url : ""
+            }
+            alt="publisher image"
+          />
+
+          <div className="publisher-info-container">
+            <p>{videoDetails ? videoDetails?.snippet?.channelTitle : ""}</p>
+            <span className="subscribers-info">
+              {channelInfo
+                ? viewCountConverter(channelInfo?.statistics?.subscriberCount)
+                : ""}{" "}
+              Subscribers
+            </span>
+          </div>
+          <div className="cta-container flex-div">
+            <button className="join-cta">Join</button>
+            <button className="subscribe-cta">Subscribe</button>
+          </div>
+        </div>
+
+        <div className="flex-div gap-8">
+          <div className="like-container flex-div">
+            <span>
+              <ThumbsUp size={20} className="mr-8" />
+              {videoDetails
+                ? viewCountConverter(videoDetails?.statistics?.likeCount)
+                : "10"}
+            </span>
+            <div className="vertical-separator" />
+            <span>
+              <ThumbsDown size={20} />
+            </span>
+          </div>
+
+          <div className="like-container flex-div">
+            <Share2 size={20} className="mr-8" /> Share
+          </div>
+
+          <div className="like-container flex-div">
+            <Ellipsis size={20} />
+          </div>
+        </div>
+      </div>
+
+      <div className="subtitle">
+        <span>
           {videoDetails?.snippet?.title
             ? viewCountConverter(videoDetails?.statistics?.viewCount)
-            : "1K"}
-          &bull;{" "}
+            : "1K"}{" "}
+          Views
+        </span>
+        <span className="ml-5">
           {videoDetails
             ? moment(videoDetails?.snippet?.publishedAt).fromNow()
             : ""}
-        </p>
-
-        <div>
-          <span>
-            <ThumbsUp size={20} className="mr-8" />{" "}
-            {videoDetails
-              ? viewCountConverter(videoDetails?.statistics?.likeCount)
-              : "10"}
-          </span>
-
-          <span>
-            <ThumbsDown size={20} className="mr-8" /> Dislike
-          </span>
-
-          <span>
-            <Share2 size={20} className="mr-8" /> Share
-          </span>
-
-          <span>
-            <CopyPlus size={20} className="mr-8" /> Save
-          </span>
-        </div>
-      </div>
-      <hr />
-      <div className="publisher flex-div">
-        <img
-          src={
-            channelInfo ? channelInfo?.snippet?.thumbnails?.default?.url : ""
-          }
-          alt="publisher image"
-        />
-
-        <div className="publisher-info-container">
-          <p>{videoDetails ? videoDetails?.snippet?.channelTitle : ""}</p>
-          <span>
-            {channelInfo
-              ? viewCountConverter(channelInfo?.statistics?.subscriberCount)
-              : ""}{" "}
-            Subscribers
-          </span>
-        </div>
-        <button className="subscribe-cta">Subscribe</button>
-      </div>
-
-      <div className="video-desc">
-        <p>
+        </span>
+        <p className="video-desc">
           {videoDetails
-            ? videoDetails?.snippet?.description.slice(0, 250)
+            ? videoDetails?.snippet?.description.slice(0, 300)
             : "Video Description"}
-        </p>
-        <p>
+        </p> 
+        {/* TODO: IMPLEMENT SHOW MORE ON CLICKING MORE HERE */}
+      </div>
+
+      <div className="comments-container">
+        <h3>
           {videoDetails
             ? viewCountConverter(videoDetails?.statistics?.commentCount)
-            : ""}
-        </p>
+            : ""} Comments
+        </h3>
 
         {videoComments?.map((comment, index) => {
           return (
-            <div className="comment" key={comment?.id}>
+            <div className="comment" key={comment?.id ? comment.id : index}>
               <img
                 src={
                   comment?.snippet?.topLevelComment?.snippet
@@ -156,7 +166,7 @@ const VideoPlayer = ({ }) => {
                 }
                 alt="user profile"
               />
-              <div>
+              <div className="comment-info">
                 <h3>
                   {
                     comment?.snippet?.topLevelComment?.snippet
@@ -171,22 +181,33 @@ const VideoPlayer = ({ }) => {
                       : ""}
                   </span>
                 </h3>
-                <p>{comment?.snippet?.topLevelComment?.snippet?.textDisplay}</p>
+                <p
+                  className="comment-text"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      comment?.snippet?.topLevelComment?.snippet?.textDisplay,
+                  }}
+                ></p>
 
                 <div className="flex-div comment-action">
-                  <ThumbsUp size={20} style={{ marginRight: "5px" }} />
-                  <span>
-                    {viewCountConverter(
-                      comment?.snippet?.topLevelComment?.snippet?.likeCount
-                    )}
-                  </span>
-                  <ThumbsDown size={20} style={{ marginRight: "5px" }} />
+                  <div className="flex-div">
+                    <span>
+                      <ThumbsUp size={18} style={{ marginRight: "5px" }} />
+                    </span>
+                    <span className="comment-likes">
+                      {viewCountConverter(
+                        comment?.snippet?.topLevelComment?.snippet?.likeCount
+                      )}
+                    </span>
+                  </div>
+                  <div>
+                    <ThumbsDown size={18} style={{ marginRight: "5px" }} />
+                  </div>
                 </div>
               </div>
             </div>
           );
         })}
-        <h4>{videoComments?.length} Comments</h4>
       </div>
     </div>
   );

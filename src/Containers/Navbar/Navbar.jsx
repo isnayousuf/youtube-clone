@@ -6,15 +6,15 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
-        <Menu
-          size={14}
-          className="menu-icon"
-          onClick={() => {
-            setIsSidebarCollapsed((prevState) =>
-              prevState === false ? true : false
-            );
-          }}
-        />
+        <div className="menu-icon">
+          <Menu
+            onClick={() => {
+              setIsSidebarCollapsed((prevState) =>
+                prevState === false ? true : false
+              );
+            }}
+          />
+        </div>
         <Link to="/">
           <div className="logo-container"></div>
         </Link>

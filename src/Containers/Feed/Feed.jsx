@@ -34,12 +34,11 @@ const Feed = ({category}) => {
               src={item?.snippet?.thumbnails?.medium?.url}
               alt="video thumbnail"
             />
-            <h2>{item?.snippet?.title}</h2>
-            <h3>{item?.snippet?.channelTitle}</h3>
+            <h2 className="video-title">{item?.snippet?.title}</h2>
+            <p className="channel-title">{item?.snippet?.channelTitle}</p>
             <p>
               {viewCountConverter(item?.statistics?.viewCount)} &bull;{" "}
               {moment(item?.snippet?.publishedAt).fromNow()}
-          
             </p>
           </Link>
         );

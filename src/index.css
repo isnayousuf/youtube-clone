@@ -1,8 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+:root {
+  --white: #fff;
+  --text-primary: #0f0f0f;
+  --text-secondary: #606060;
+  --link-hover-bg: #eeeeee;
+  --primary-cta-bg: #0f0f0f;
+  --secondary-cta-bg: rgba(0, 0, 0, 0.05);
+  --external-link: rgb(75, 75, 240);
+
+  --token-6: 6px;
+  --token-8: 8px;
+  --token-10: 10px;
+  --token-12: 12px;
+  --token-14: 14px;
+  --token-16: 16px;
+  --token-17: 17px;
 }
 
 a {
@@ -23,10 +44,17 @@ img {
   gap: 25px;
 }
 
+.gap-8 {
+  gap: var(--token-8);
+}
+
 .mr-20 {
   margin-right: 20px
 }
 
 .mr-8 {
   margin-right: 8px;
+}
+.ml-5 {
+  margin-left: 5px;
 }

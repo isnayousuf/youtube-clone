@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { viewCountConverter } from "../../utils";
@@ -23,18 +24,28 @@ const Recommended = ({ categoryId }) => {
 
     fetchRecommendedVideos();
   }, [categoryId])
-
+  
+  console.log("data", data);
+  
 
 
   return (
     <div className="recommended">
       {data?.map((item, index) => (
-        <Link to={`/video/${item.snippet.categoryId}/${item.id}`} className="recommended-item-list" key={`${item?.id ? item?.id :  index}`}>
+        <Link
+          to={`/video/${item.snippet.categoryId}/${item.id}`}
+          className="recommended-video-list"
+          key={`${item?.id ? item?.id : index}`}
+        >
           <img src={item?.snippet?.thumbnails?.medium?.url} alt="" />
           <div className="video-info">
             <h4>{item?.snippet?.title}</h4>
-            <p>{item?.snippet?.channelTitle}</p>
-            <p>{viewCountConverter(item?.statistics?.viewCount)} Views </p>
+            <p className="channel-name">{item?.snippet?.channelTitle}</p>
+            <p className="channel-statistics">
+              {viewCountConverter(item?.statistics?.viewCount)} Views &bull;
+              {" "}
+              {moment(item?.snippet?.publishedAt).fromNow()}
+            </p>
           </div>
         </Link>
       ))}
