@@ -10,7 +10,7 @@ const Feed = ({category}) => {
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&videoCategoryId=${category}&key=${apiKey}`;
+  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=50&videoCategoryId=${category}&key=${apiKey}`;
 
   const fetchVideos = async () => {
     const response = await fetch(API_URL);
@@ -22,7 +22,6 @@ const Feed = ({category}) => {
     fetchVideos();
   }, [category])
 
- console.log("DATA", data);
   return (
     <div className="feed">
       {data?.map((item, index) => {

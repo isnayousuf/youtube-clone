@@ -1,7 +1,7 @@
 import {
   BookOpenText,
   Gamepad2,
-  Home as HomeIcon,
+  House,
   MemoryStick,
   Music,
   Newspaper,
@@ -25,7 +25,8 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 0 ? "active" : ""}`}
           onClick={() => handleCategoryChange(0)}
         >
-          <HomeIcon size={20} className="side-icon" />
+          {/* <HomeIcon size={24} className="side-icon" /> */}
+          <House size={24} className="side-icon" />
           <p>Home</p>
         </div>
 
@@ -33,7 +34,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 20 ? "active" : ""}`}
           onClick={() => handleCategoryChange(20)}
         >
-          <Gamepad2 size={20} className="side-icon" />
+          <Gamepad2 size={24} className="side-icon" />
           <p>Gaming</p>
         </div>
 
@@ -41,7 +42,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 2 ? "active" : ""}`}
           onClick={() => handleCategoryChange(2)}
         >
-          <Truck size={20} className="side-icon" />
+          <Truck size={24} className="side-icon" />
           <p>Automobiles</p>
         </div>
 
@@ -49,7 +50,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 17 ? "active" : ""}`}
           onClick={() => handleCategoryChange(17)}
         >
-          <Trophy size={20} className="side-icon" />
+          <Trophy size={24} className="side-icon" />
           <p>Sports</p>
         </div>
 
@@ -57,7 +58,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 24 ? "active" : ""}`}
           onClick={() => handleCategoryChange(24)}
         >
-          <TvMinimalPlay size={20} className="side-icon" />
+          <TvMinimalPlay size={24} className="side-icon" />
           <p>Entertainment</p>
         </div>
 
@@ -65,15 +66,15 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 28 ? "active" : ""}`}
           onClick={() => handleCategoryChange(28)}
         >
-          <MemoryStick size={20} className="side-icon" />
-          <p>Science & Technology </p>
+          <MemoryStick size={24} className="side-icon" />
+          <p>Technology </p>
         </div>
 
         <div
           className={`flex-div side-link ${category === 10 ? "active" : ""}`}
           onClick={() => handleCategoryChange(10)}
         >
-          <Music size={20} className="side-icon" />
+          <Music size={24} className="side-icon" />
           <p>Music</p>
         </div>
 
@@ -81,7 +82,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 22 ? "active" : ""}`}
           onClick={() => handleCategoryChange(22)}
         >
-          <BookOpenText size={20} className="side-icon" />
+          <BookOpenText size={24} className="side-icon" />
           <p>People and Blogs</p>
         </div>
 
@@ -89,7 +90,7 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
           className={`flex-div side-link ${category === 25 ? "active" : ""}`}
           onClick={() => handleCategoryChange(25)}
         >
-          <Newspaper size={20} className="side-icon" />
+          <Newspaper size={24} className="side-icon" />
           <p>News and Politics</p>
         </div>
       </div>
@@ -99,32 +100,26 @@ const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
       <div className="subscribed-list">
         <h3>Subscribed</h3>
         <div className="flex-div side-link">
-          <User size={20} />
+          <User size={24} />
           <p>User1</p>
         </div>
 
         <div className="flex-div side-link">
-          <User size={20} />
+          <User size={24} />
           <p>User2</p>
         </div>
 
         <div className="flex-div side-link">
-          <User size={20} />
+          <User size={24} />
           <p>User3</p>
         </div>
 
-        <div
-          className="flex-div side-link"
-          onClick={() => handleCategoryChange(0)}
-        >
-          <User size={20} />
+        <div className="flex-div side-link">
+          <User size={24} />
           <p>User4</p>
         </div>
 
-        <div
-          className="flex-div side-link"
-          onClick={() => handleCategoryChange(0)}
-        >
+        <div className="flex-div side-link">
           <User size={20} />
           <p>User5</p>
         </div>

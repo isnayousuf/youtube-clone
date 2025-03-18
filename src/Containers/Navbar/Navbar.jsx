@@ -1,9 +1,6 @@
 import { Bell, CircleEllipsis, CircleUser, Menu, Search } from "lucide-react";
 import React from 'react';
 import { Link } from "react-router-dom";
-import {
-  default as LogoIcon,
-} from "../../assets/afternoon-icon.svg";
 import "./Navbar.css";
 const Navbar = ({ setIsSidebarCollapsed }) => {
   return (
@@ -19,7 +16,7 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
           }}
         />
         <Link to="/">
-          <img src={LogoIcon} className="logo" alt="logo icon" />
+          <div className="logo-container"></div>
         </Link>
       </div>
       <div className="nav-middle flex-div">

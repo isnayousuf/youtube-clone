@@ -1,11 +1,10 @@
 nav {
   padding: 10px;
   justify-content: space-between;
-  background: #fff;
+  background: #f9f9f9;
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-left .menu-icon {
@@ -13,9 +12,12 @@ nav {
    margin-left: 25px;
 }
 
-.nav-left .logo {
+.nav-left .logo-container {
   width: 130px;
-  height: 20px;
+  height: 50px;
+  background: url('../../assets/logo.png') no-repeat center;
+  background-size: cover;
+  margin-left: 15px;
 }
 
 .nav-middle .search-box {
@@ -53,7 +55,7 @@ nav {
     width: 30px;
   }
 
-  .logo {
+  .logo-container {
     width: 90px;
   }
 

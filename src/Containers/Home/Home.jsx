@@ -14,10 +14,10 @@ const Home = ({ isSidebarCollapsed }) => {
       />
       <div
         className={`container ${
-          isSidebarCollapsed ? "" : "expanded-container"
+          isSidebarCollapsed ? "expanded-container" : ""
         }`}
       >
-        <Feed category={category}/>
+        <Feed category={category} />
       </div>
     </div>
   );
