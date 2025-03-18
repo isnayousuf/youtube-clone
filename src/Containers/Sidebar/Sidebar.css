@@ -4,7 +4,7 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  padding-left: 2%;
+  padding-left: var(--side-padding);
   padding-top: 80px;
   transition: all 0.5s ease-in-out;
 }

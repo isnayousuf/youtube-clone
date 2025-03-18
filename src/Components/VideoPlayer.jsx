@@ -4,29 +4,27 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import "../Containers/Feed/Feed.css";
 import { viewCountConverter } from "../utils";
-const VideoPlayer = ({ }) => {
-
-  const {videoId} = useParams();
+const VideoPlayer = ({ isSidebarCollapsed }) => {
+  const { videoId } = useParams();
 
   const [videoDetails, setVideoDetails] = useState(null);
-  const [channelInfo, setChannelInfo] = useState(null)
-  const [videoComments, setVideoComments] = useState([])
+  const [channelInfo, setChannelInfo] = useState(null);
+  const [videoComments, setVideoComments] = useState([]);
 
   const apiKey = import.meta.env.VITE_API_KEY;
-  const UrlEndPoints = {VIDEOS : "videos", CHANNEL : "channels"};
+  const UrlEndPoints = { VIDEOS: "videos", CHANNEL: "channels" };
   const baseUrl = `https://www.googleapis.com/youtube/v3`;
   const urlParts = `?part=snippet%2CcontentDetails%2Cstatistics`;
 
-  const fetchVideoData = async () =>{
+  const fetchVideoData = async () => {
     const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${apiKey}`;
 
     const response = await fetch(API_URL);
-    const videoDetailsData = await response.json();    
-  if (videoDetailsData?.items?.length > 0) {
-    setVideoDetails(videoDetailsData.items[0]); 
-  }
-  }
-
+    const videoDetailsData = await response.json();
+    if (videoDetailsData?.items?.length > 0) {
+      setVideoDetails(videoDetailsData.items[0]);
+    }
+  };
 
   const fetchVideoComments = async () => {
     const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=70&videoId=${videoId}&key=${apiKey}`;
@@ -38,32 +36,31 @@ const VideoPlayer = ({ }) => {
     }
   };
 
-
-  const fetchChannelData = async() => {
-     if (!videoDetails?.snippet?.channelId) return;
+  const fetchChannelData = async () => {
+    if (!videoDetails?.snippet?.channelId) return;
     const channelId = videoDetails.snippet.channelId;
     const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${channelId}&key=${apiKey}`;
-     const response = await fetch(url);
-     const channelData = await response.json();
-     
-     if (channelData?.items?.length > 0) {
-       setChannelInfo(channelData?.items[0]);
-     }
-      fetchVideoComments();
-  }
+    const response = await fetch(url);
+    const channelData = await response.json();
+
+    if (channelData?.items?.length > 0) {
+      setChannelInfo(channelData?.items[0]);
+    }
+    fetchVideoComments();
+  };
 
   useEffect(() => {
-     fetchVideoData();
-  }, [videoId])
+    fetchVideoData();
+  }, [videoId]);
 
   useEffect(() => {
-     fetchChannelData();
-  }, [videoDetails])
+    fetchChannelData();
+  }, [videoDetails]);
 
-
-  
   return (
-    <div className="play-video">
+    <div
+      className={`play-video ${isSidebarCollapsed ? "expand-container" : "collapse-container"}`}
+    >
       {videoId ? (
         <iframe
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -145,7 +142,7 @@ const VideoPlayer = ({ }) => {
           {videoDetails
             ? videoDetails?.snippet?.description.slice(0, 300)
             : "Video Description"}
-        </p> 
+        </p>
         {/* TODO: IMPLEMENT SHOW MORE ON CLICKING MORE HERE */}
       </div>
 
@@ -153,7 +150,8 @@ const VideoPlayer = ({ }) => {
         <h3>
           {videoDetails
             ? viewCountConverter(videoDetails?.statistics?.commentCount)
-            : ""} Comments
+            : ""}{" "}
+          Comments
         </h3>
 
         {videoComments?.map((comment, index) => {

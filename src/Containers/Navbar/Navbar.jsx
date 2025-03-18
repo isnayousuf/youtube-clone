@@ -1,4 +1,4 @@
-import { Bell, CircleEllipsis, CircleUser, Menu, Search } from "lucide-react";
+import { Bell, CircleUser, Menu, Search } from "lucide-react";
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -8,6 +8,8 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
       <div className="nav-left flex-div">
         <div className="menu-icon">
           <Menu
+            strokeWidth={1.5}
+            absoluteStrokeWidth
             onClick={() => {
               setIsSidebarCollapsed((prevState) =>
                 prevState === false ? true : false
@@ -22,15 +24,18 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
       <div className="nav-middle flex-div">
         <div className="search-box flex-div">
           <input type="text" placeholder="Search" />
-          <Search size={14} />
+          <Search size={14} strokeWidth={1.5} absoluteStrokeWidth />
         </div>
       </div>
-
       <div className="nav-right flex-div gap-25">
-        <Search size={30} />
-        <CircleEllipsis size={30} />
-        <Bell size={30} />
-        <CircleUser size={30} className="user-icon" />
+     
+        <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />
+        <CircleUser
+          size={30}
+          strokeWidth={1.5}
+          absoluteStrokeWidth
+          className="user-icon"
+        />
       </div>
     </nav>
   );

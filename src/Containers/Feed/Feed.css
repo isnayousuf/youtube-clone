@@ -33,6 +33,7 @@
 /* VIDEOPLAYER STYLING */
 .play-video {
   flex-basis:  65%;
+  padding-left: 4%;
 }
 
 .play-video iframe {
