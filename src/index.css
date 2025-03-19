@@ -63,12 +63,15 @@ img {
 
 .collapse-container {
   transition: all 0.5 ease;
-  padding-left: 200px;
+  
+  padding-left: 17%;
+  padding-right: 2%;
 }
 
 .expand-container {
   transition: all 0.5 ease;
   padding-left: 100px;
+  /* padding-right: 2%; */
 }
 
 .card-container {
@@ -102,7 +105,13 @@ img {
   font-size: 14px;
 }
 
-
 }
 
+@media (max-width: 900px) {
+  .collapse-container, .expand-container  {
+   padding-left: 5%;
+   padding-right: 5%;
+  }
+
+}
 

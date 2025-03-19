@@ -31,13 +31,14 @@ const Sidebar = ({ isSidebarCollapsed }) => {
             }`}
             onClick={() => handleCategoryChange(item.value)}
           >
-            {item.icon} 
+            {item.icon}
             <p>{item.label}</p>
           </div>
         ))}
       </div>
-
-      <hr />
+      <div className="separator-container">
+        <div className="separator"></div>
+      </div>
 
       <div className="subscribed-list">
         <h3>Subscribed</h3>

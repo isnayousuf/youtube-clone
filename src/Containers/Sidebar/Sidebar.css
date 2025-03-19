@@ -8,6 +8,15 @@
   transition: all 0.5s ease-in-out;
 }
 
+.shortcut-links, .subscribed-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.collapse-sidebar .shortcut-links, .collapse-sidebar .subscribed-list {
+  align-items: center;
+}
 
 .side-link {
   flex: 1;
@@ -30,6 +39,20 @@
   height: 1px;
   background-color: #ccc;
   width: 85%;
+}
+
+
+.separator-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.sidebar .separator {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  width: 70px;
 }
 
 .subscribed-list h3 {
@@ -56,6 +79,20 @@
   padding-bottom: 1px;
   border-bottom: 3px solid red;
  }
+
+ /* RIGHT SIDE BAR STYLING */
+
+ .right-sidebar {
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-left: var(--side-padding);
+  padding-top: 80px;
+  transition: all 0.5s ease-in-out;
+}
+
 
 
 
