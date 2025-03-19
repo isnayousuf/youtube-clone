@@ -15,7 +15,10 @@ const App = () => {
  
   return (
     <div>
-      <Navbar setIsSidebarCollapsed={setIsSidebarCollapsed} />
+      <Navbar
+        setIsSidebarCollapsed={setIsSidebarCollapsed}
+        setIsRightSidebarOpen={setIsRightSidebarOpen}
+      />
       <Sidebar isSidebarCollapsed={isSidebarCollapsed} />
       <RightSidebar isRightSidebarOpen={isRightSidebarOpen} />
       <Routes>

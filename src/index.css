@@ -15,7 +15,7 @@
   --link-hover-bg: #eeeeee;
   --primary-cta-bg: #0f0f0f;
   --secondary-cta-bg: rgba(0, 0, 0, 0.05);
-  --external-link: rgb(75, 75, 240);
+  --external-link: #065fd4;
 
   --token-6: 6px;
   --token-8: 8px;
@@ -107,10 +107,31 @@ img {
 
 }
 
+.user-profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user-profile-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
 @media (max-width: 900px) {
   .collapse-container, .expand-container  {
    padding-left: 5%;
    padding-right: 5%;
+  }
+
+  .nav-right .user-profile-icon {
+    display: block; 
+    width: 30px;
+    height: 30px;
   }
 
 }

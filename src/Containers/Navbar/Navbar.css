@@ -42,12 +42,6 @@ nav {
   background-color: transparent;
 }
 
-/* Todo: check this with profile icon and add styling accordingly */
-.nav-right .user-icon {
-  width: 70px;
-  border-radius: 50%;
-}
-
 @media (max-width: 900px) {
   .menu-icon {
     display: none;
@@ -56,11 +50,6 @@ nav {
    .nav-right img {
     /* check this with your icons */
     display: none; 
-  }
-
-   .nav-right .user-icon {
-    display: block; 
-    width: 30px;
   }
 
   .logo-container {

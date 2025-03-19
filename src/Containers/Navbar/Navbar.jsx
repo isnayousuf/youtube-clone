@@ -1,9 +1,15 @@
-import { Bell, CircleUser, Menu } from "lucide-react";
+import { Bell, Menu } from "lucide-react";
 import React from 'react';
 import { Link } from "react-router-dom";
+import UserProfile from "../../Components/UserProfile";
 import "./Navbar.css";
 import SearchBar from "./SearchBar";
-const Navbar = ({ setIsSidebarCollapsed }) => {
+
+const Navbar = ({ setIsSidebarCollapsed, setIsRightSidebarOpen }) => {
+
+  const handleShowRightSidebar =() => {
+    setIsRightSidebarOpen((prevState) => !prevState );
+  }
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -27,12 +33,7 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
       </div>
       <div className="nav-right flex-div gap-25">
         <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />
-        <CircleUser
-          size={30}
-          strokeWidth={1.5}
-          absoluteStrokeWidth
-          className="user-icon"
-        />
+        <UserProfile handleProfileClick={handleShowRightSidebar} />
       </div>
     </nav>
   );
