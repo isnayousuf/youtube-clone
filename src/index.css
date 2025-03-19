@@ -74,6 +74,12 @@ img {
   /* padding-right: 2%; */
 }
 
+.separator {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
