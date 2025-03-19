@@ -11,19 +11,30 @@ import {
   User
 } from "lucide-react";
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = ({ isSidebarCollapsed, category, setCategory }) => {
+  const navigate = useNavigate();
 
   const handleCategoryChange = (val) => {
-    setCategory(val)
+    setCategory(val); 
+    navigate(`/feed/${val}`);
+  };
+
+  const navigateToHome =(categoryId) =>{
+    setCategory(categoryId);
+    navigate(`/`);
   }
+
   return (
     <div className={`sidebar ${isSidebarCollapsed ? "collapse-sidebar" : ""}`}>
       <div className="shortcut-links">
         <div
           className={`flex-div side-link ${category === 0 ? "active" : ""}`}
-          onClick={() => handleCategoryChange(0)}
+          onClick={() =>  {
+            navigateToHome(0)
+          }}
         >
           <House
             size={24}

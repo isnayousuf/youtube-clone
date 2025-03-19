@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import SearchResults from "./Components/SearchResults";
+import Feed from "./Containers/Feed/Feed";
 import Home from "./Containers/Home/Home";
 import Navbar from "./Containers/Navbar/Navbar";
 import Sidebar from "./Containers/Sidebar/Sidebar";
@@ -12,9 +13,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar
-        setIsSidebarCollapsed={setIsSidebarCollapsed}
-      />
+      <Navbar setIsSidebarCollapsed={setIsSidebarCollapsed} />
       <Sidebar
         isSidebarCollapsed={isSidebarCollapsed}
         category={category}
@@ -30,6 +29,10 @@ const App = () => {
               setCategory={setCategory}
             />
           }
+        />
+        <Route
+          path="/feed/:category"
+          element={<Feed isSidebarCollapsed={isSidebarCollapsed} />}
         />
         <Route
           path="/video/:categoryId/:videoId"
