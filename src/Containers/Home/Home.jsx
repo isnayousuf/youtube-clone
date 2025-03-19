@@ -2,7 +2,7 @@ import React from "react";
 import Feed from "../Feed/Feed";
 import "./Home.css";
 
-const Home = ({ isSidebarCollapsed, category, searchQuery }) => {
+const Home = ({ isSidebarCollapsed, category }) => {
 
   return (
     <div>
@@ -11,7 +11,7 @@ const Home = ({ isSidebarCollapsed, category, searchQuery }) => {
           isSidebarCollapsed ? "expanded-container" : ""
         }`}
       >
-        <Feed category={category} searchQuery={searchQuery} />
+        <Feed category={category}  />
       </div>
     </div>
   );

@@ -9,13 +9,11 @@ import Video from "./Containers/Video/Video";
 const App = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [category, setCategory] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <div>
       <Navbar
         setIsSidebarCollapsed={setIsSidebarCollapsed}
-        setSearchQuery={setSearchQuery}
       />
       <Sidebar
         isSidebarCollapsed={isSidebarCollapsed}
@@ -30,7 +28,6 @@ const App = () => {
               isSidebarCollapsed={isSidebarCollapsed}
               category={category}
               setCategory={setCategory}
-              searchQuery={searchQuery}
             />
           }
         />

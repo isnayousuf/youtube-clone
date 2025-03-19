@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-const SearchBar = ({ setSearchQuery }) => {
+const SearchBar = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
@@ -20,6 +20,7 @@ const SearchBar = ({ setSearchQuery }) => {
         placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onBlur={handleSearch}
       />
       <span onClick={handleSearch}>
         <Search size={14} strokeWidth={1.5} absoluteStrokeWidth />

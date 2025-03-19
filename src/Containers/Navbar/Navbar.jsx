@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import SearchBar from "./SearchBar";
-const Navbar = ({ setIsSidebarCollapsed , setSearchQuery}) => {
+const Navbar = ({ setIsSidebarCollapsed }) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -23,7 +23,7 @@ const Navbar = ({ setIsSidebarCollapsed , setSearchQuery}) => {
         </Link>
       </div>
       <div className="nav-middle flex-div">
-        <SearchBar setSearchQuery={setSearchQuery} />
+        <SearchBar />
       </div>
       <div className="nav-right flex-div gap-25">
         <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />

@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import VideoCard from "../../Components/VideoCard";
+import { API_KEY } from "../../constants";
 import "./Feed.css";
 
-const Feed = ({category, searchQuery}) => {
+const Feed = ({category}) => {
 
 
   const [data, setData] = useState([]);
-
-  const apiKey = import.meta.env.VITE_API_KEY;
-
-  // const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=50&videoCategoryId=${category}&${searchQuery}&key=${apiKey}`;
-const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=50&videoCategoryId=${category}${
-  searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ""
-}&key=${apiKey}`;
+  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=50&videoCategoryId=${category}&key=${API_KEY}`;
 
   const fetchVideos = async () => {
     const response = await fetch(API_URL);
@@ -22,7 +17,7 @@ const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,conte
 
   useEffect(() => {
     fetchVideos();
-  }, [category, searchQuery]);
+  }, [category]);
 
   return (
     <div className="feed card-container">
