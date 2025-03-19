@@ -60,3 +60,49 @@ img {
 .ml-5 {
   margin-left: 5px;
 }
+
+.collapse-container {
+  transition: all 0.5 ease;
+  padding-left: 200px;
+}
+
+.expand-container {
+  transition: all 0.5 ease;
+  padding-left: 100px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  row-gap: 35px;
+  column-gap: 20px;
+  padding-top: 20px;
+
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card .video-title {
+  font-size: 14px !important;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 5px 0;
+}
+
+.card .channel-title {
+  font-size: 14px;
+  color: #606060;
+  margin: 10px 0 6px;
+}
+
+.card p {
+  color: #606060;
+  font-size: 14px;
+}
+
+
+}
+
+

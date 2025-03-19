@@ -1,8 +1,9 @@
-import { Bell, CircleUser, Menu, Search } from "lucide-react";
+import { Bell, CircleUser, Menu } from "lucide-react";
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-const Navbar = ({ setIsSidebarCollapsed }) => {
+import SearchBar from "./SearchBar";
+const Navbar = ({ setIsSidebarCollapsed , setSearchQuery}) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -22,13 +23,9 @@ const Navbar = ({ setIsSidebarCollapsed }) => {
         </Link>
       </div>
       <div className="nav-middle flex-div">
-        <div className="search-box flex-div">
-          <input type="text" placeholder="Search" />
-          <Search size={14} strokeWidth={1.5} absoluteStrokeWidth />
-        </div>
+        <SearchBar setSearchQuery={setSearchQuery} />
       </div>
       <div className="nav-right flex-div gap-25">
-     
         <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />
         <CircleUser
           size={30}
