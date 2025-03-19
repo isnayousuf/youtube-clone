@@ -3,7 +3,7 @@ import {
 } from "lucide-react";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { YTCategories } from "../Constants/data.jsx";
+import { YTCategories } from "../../Constants/data.jsx";
 import "./Sidebar.css";
 
 const Sidebar = ({ isSidebarCollapsed }) => {

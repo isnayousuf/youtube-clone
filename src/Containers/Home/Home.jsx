@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import VideoCard from "../../Components/VideoCard";
-import { API_KEY } from "../Constants/constants";
+import { API_KEY } from "../../Constants/constants";
 import "./Home.css";
 
 const Home = ({ isSidebarCollapsed }) => {
   const [data, setData] = useState([]);
-  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&maxResults=50&key=${API_KEY}`;
+  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=IN&maxResults=50&key=${API_KEY}`;
   const fetchVideos = async () => {
     const response = await fetch(API_URL);
     const responseData = await response.json();

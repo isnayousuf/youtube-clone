@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { API_KEY } from "../Containers/Constants/constants";
+import { API_KEY } from "../Constants/constants";
 import VideoCard from "./VideoCard";
 
 const SearchResults = ({ isSidebarCollapsed }) => {

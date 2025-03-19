@@ -1,7 +1,7 @@
 import React from 'react';
 import UserProfile from "../../Components/UserProfile";
-import { User } from "../Constants/constants";
-import { RightSideOptions } from "../Constants/data";
+import { User } from "../../Constants/constants";
+import { RightSideOptions } from "../../Constants/data";
 
 const RightSidebar = ({ isRightSidebarOpen }) => {
   
