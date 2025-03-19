@@ -1,13 +1,26 @@
 import {
   BookOpenText,
+  BookUser,
+  CircleDollarSign,
+  CircleHelp,
   Gamepad2,
+  Globe,
   House,
+  Keyboard,
+  Languages,
+  LogOut,
   MemoryStick,
+  MessageSquareWarning,
   Music,
   Newspaper,
+  Settings,
+  ShieldQuestion,
+  ShieldUser,
+  SunMoon,
   Trophy,
   Truck,
   TvMinimalPlay,
+  Youtube,
 } from "lucide-react";
 
 export const YTCategories = [
@@ -16,7 +29,7 @@ export const YTCategories = [
     value: 0,
     icon: (
       <House
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -28,7 +41,7 @@ export const YTCategories = [
     value: 20,
     icon: (
       <Gamepad2
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -40,7 +53,7 @@ export const YTCategories = [
     value: 2,
     icon: (
       <Truck
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -52,7 +65,7 @@ export const YTCategories = [
     value: 17,
     icon: (
       <Trophy
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -64,7 +77,7 @@ export const YTCategories = [
     value: 24,
     icon: (
       <TvMinimalPlay
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -76,7 +89,7 @@ export const YTCategories = [
     value: 28,
     icon: (
       <MemoryStick
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -88,7 +101,7 @@ export const YTCategories = [
     value: 10,
     icon: (
       <Music
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -100,7 +113,7 @@ export const YTCategories = [
     value: 22,
     icon: (
       <BookOpenText
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -112,7 +125,7 @@ export const YTCategories = [
     value: 25,
     icon: (
       <Newspaper
-        size={24}
+        size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -122,13 +135,13 @@ export const YTCategories = [
 ];
 
 
-export const RightSideOption = [
+export const RightSideOptions = [
   {
     label: "Google Account",
     value: 0,
     icon: (
       <House
-        size={24}
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -139,8 +152,8 @@ export const RightSideOption = [
     label: "Switch Account",
     value: 20,
     icon: (
-      <Gamepad2
-        size={24}
+      <BookUser
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -151,8 +164,8 @@ export const RightSideOption = [
     label: "Signout",
     value: 2,
     icon: (
-      <Truck
-        size={24}
+      <LogOut
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -163,8 +176,8 @@ export const RightSideOption = [
     label: "Youtube Studio",
     value: 17,
     icon: (
-      <Trophy
-        size={24}
+      <Youtube
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -175,8 +188,8 @@ export const RightSideOption = [
     label: "Purchase and memberships",
     value: 24,
     icon: (
-      <TvMinimalPlay
-        size={24}
+      <CircleDollarSign
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -187,8 +200,8 @@ export const RightSideOption = [
     label: "Your data in Youtube",
     value: 28,
     icon: (
-      <MemoryStick
-        size={24}
+      <ShieldUser
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -199,8 +212,8 @@ export const RightSideOption = [
     label: "Appearance: Device theme",
     value: 10,
     icon: (
-      <Music
-        size={24}
+      <SunMoon
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -211,8 +224,8 @@ export const RightSideOption = [
     label: "Language:British English",
     value: 22,
     icon: (
-      <BookOpenText
-        size={24}
+      <Languages
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -223,8 +236,8 @@ export const RightSideOption = [
     label: "Restricted Mode: Off",
     value: 25,
     icon: (
-      <Newspaper
-        size={24}
+      <ShieldQuestion
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -236,8 +249,8 @@ export const RightSideOption = [
     label: "Location: India",
     value: 28,
     icon: (
-      <MemoryStick
-        size={24}
+      <Globe
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -248,8 +261,8 @@ export const RightSideOption = [
     label: "Keyboard shortcuts",
     value: 10,
     icon: (
-      <Music
-        size={24}
+      <Keyboard
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -260,8 +273,8 @@ export const RightSideOption = [
     label: "Settings",
     value: 22,
     icon: (
-      <BookOpenText
-        size={24}
+      <Settings
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -272,8 +285,8 @@ export const RightSideOption = [
     label: "Help",
     value: 25,
     icon: (
-      <Newspaper
-        size={24}
+    <CircleHelp
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"
@@ -284,8 +297,8 @@ export const RightSideOption = [
     label: "Send feedback",
     value: 25,
     icon: (
-      <Newspaper
-        size={24}
+      <MessageSquareWarning 
+        size={18}
         strokeWidth={1.5}
         absoluteStrokeWidth
         className="side-icon"

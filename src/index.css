@@ -61,6 +61,10 @@ img {
   margin-left: 5px;
 }
 
+.my-10 {
+  margin: 10px 0;
+}
+
 .collapse-container {
   transition: all 0.5 ease;
   
