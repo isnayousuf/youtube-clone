@@ -9,15 +9,12 @@ import Video from "./Containers/Video/Video";
 
 const App = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [category, setCategory] = useState(0);
 
   return (
     <div>
       <Navbar setIsSidebarCollapsed={setIsSidebarCollapsed} />
       <Sidebar
         isSidebarCollapsed={isSidebarCollapsed}
-        category={category}
-        setCategory={setCategory}
       />
       <Routes>
         <Route
@@ -25,8 +22,6 @@ const App = () => {
           element={
             <Home
               isSidebarCollapsed={isSidebarCollapsed}
-              category={category}
-              setCategory={setCategory}
             />
           }
         />

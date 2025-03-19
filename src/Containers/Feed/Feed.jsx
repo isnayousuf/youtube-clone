@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import VideoCard from "../../Components/VideoCard";
-import { API_KEY } from "../../constants";
+import { API_KEY } from "../Constants/constants";
 import "./Feed.css";
 
 const Feed = ({isSidebarCollapsed }) => {
