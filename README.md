@@ -68,12 +68,7 @@ VITE_YOUTUBE_API_KEY=your_api_key_here
 
 ## Deployment  
 
-To preview the project: [open the live link](http://localhost:5173) 
-
-```sh
-yarn build
-yarn preview
-```
+To preview the project: [open the live link](https://youtube-clone-two-lemon.vercel.app/) 
 
 ---
 
