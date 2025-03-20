@@ -150,7 +150,7 @@ export const RightSideOptions = [
   },
   {
     label: "Switch Account",
-    value: 20,
+    value: 1,
     icon: (
       <BookUser
         size={18}
@@ -174,7 +174,7 @@ export const RightSideOptions = [
   },
   {
     label: "Youtube Studio",
-    value: 17,
+    value: 3,
     icon: (
       <Youtube
         size={18}
@@ -186,7 +186,7 @@ export const RightSideOptions = [
   },
   {
     label: "Purchase and memberships",
-    value: 24,
+    value: 4,
     icon: (
       <CircleDollarSign
         size={18}
@@ -198,7 +198,7 @@ export const RightSideOptions = [
   },
   {
     label: "Your data in Youtube",
-    value: 28,
+    value: 5,
     icon: (
       <ShieldUser
         size={18}
@@ -210,7 +210,7 @@ export const RightSideOptions = [
   },
   {
     label: "Appearance: Device theme",
-    value: 10,
+    value: 6,
     icon: (
       <SunMoon
         size={18}
@@ -222,7 +222,7 @@ export const RightSideOptions = [
   },
   {
     label: "Language:British English",
-    value: 22,
+    value: 7,
     icon: (
       <Languages
         size={18}
@@ -234,7 +234,7 @@ export const RightSideOptions = [
   },
   {
     label: "Restricted Mode: Off",
-    value: 25,
+    value: 8,
     icon: (
       <ShieldQuestion
         size={18}
@@ -247,7 +247,7 @@ export const RightSideOptions = [
 
   {
     label: "Location: India",
-    value: 28,
+    value: 9,
     icon: (
       <Globe
         size={18}
@@ -271,7 +271,7 @@ export const RightSideOptions = [
   },
   {
     label: "Settings",
-    value: 22,
+    value: 11,
     icon: (
       <Settings
         size={18}
@@ -283,7 +283,7 @@ export const RightSideOptions = [
   },
   {
     label: "Help",
-    value: 25,
+    value: 12,
     icon: (
     <CircleHelp
         size={18}
@@ -295,7 +295,7 @@ export const RightSideOptions = [
   },
   {
     label: "Send feedback",
-    value: 25,
+    value: 13,
     icon: (
       <MessageSquareWarning 
         size={18}
