@@ -1,51 +1,45 @@
-YouTube Clone
+# Youtube Clone
 
-A YouTube Clone built using React, Vite, and YouTube's Open API. This project features infinite scrolling, category-based feeds, search functionality, a 404 page, and full responsiveness.
+A YouTube Clone built using React, Vite, and YouTube's Open API. This project features **infinite scrolling, category-based feeds, search functionality, a 404 page, and full responsiveness.**
 
-Table of Contents
+---
 
-Features
+## Features
 
-Tech Stack
+**Home Page** – Displays 20 records initially with infinite scrolling for dynamic content loading  
+**Sidebar Navigation** – Includes various categories for browsing different types of content 
+**Category-Based Feed** - Updates the feed page with infinite scrolling based on the selected **Search Functionality** - Integrated into the navbar to search for videos.
+**404 page** – Displays a custom 404 page for undefined routes.  
+**Responsive Design** - Ensures a seamless experience across devices.
 
-Installation
+---
 
-Usage
+## Tech Stack
 
-Environment Variables
+- **Frontend**: React 
+- **State Management**: React Hooks (`useState`, `useEffect`)  
+- **API**: [Youtube Data Api](https://developers.google.com/youtube/v3/docs)  
+- **Package Manager**: Yarn  
+- **Icons**: [Lucide React](https://lucide.dev/icons)
 
-Deployment
+---
 
-Contributing
+## Installation & Setup
 
-License
+### 1️ Clone the Repository  
+```sh
+git clone https://github.com/isnayousuf/youtube-clone.git
+cd youtube-clone
 
-Features
 
-✅ Home Page - Displays 20 records initially with infinite scrolling for dynamic content loading.
-✅ Sidebar Navigation - Includes various categories for browsing different types of content.
-✅ Category-Based Feed - Updates the feed page with infinite scrolling based on the selected category.
-✅ Search Functionality - Integrated into the navbar to search for videos.
-✅ 404 Page - Displays a custom 404 page for undefined routes.
-✅ Responsive Design - Ensures a seamless experience across devices.
+### 2 Install Dependencies
+```sh
+yarn 
 
-Tech Stack
-
-Frontend: React (Created with vite@latest and managed with yarn)
-
-Routing: React Router DOM
-
-Icons: Lucide React
-
-API: YouTube Open API
-
-Installation
-
-Clone the repository:
-
-Install dependencies:
-
-Start the development server:
+### 3 Run the App
+```sh
+yarn dev
+Now open http://localhost:5173 in your browser! 
 
 Usage
 
@@ -63,17 +57,15 @@ Environment Variables
 
 Create a .env file in the root directory and add your YouTube API key:
 
-Deployment
 
-To build the project for production:
+## Deployment
 
-To preview the production build:
+To preview the project:
 
-Contributing
+## Contributing
 
 Contributions are welcome! Feel free to fork this repository, create a feature branch, and submit a pull request.
 
-License
+## License
 
 This project is licensed under the MIT License.
-
