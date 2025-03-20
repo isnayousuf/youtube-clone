@@ -2,20 +2,27 @@ import React, { useEffect, useState } from "react";
 import Loader from "../../Components/Loader";
 import VideoCard from "../../Components/VideoCard";
 import { API_KEY } from "../../Constants/constants";
+import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 import "./Home.css";
 
 const Home = ({ isSidebarCollapsed }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=IN&maxResults=50&key=${API_KEY}`;
-  const fetchVideos = async () => {
+  const [nextPageToken, setNextPageToken] = useState("");
+  const fetchVideos = async (nextPageToken) => {
+   let API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=IN&maxResults=20&key=${API_KEY}`;
+
     try {
+      if (nextPageToken) {
+        API_URL += `&pageToken=${nextPageToken}`;
+      }
       setIsLoading(true);
       const response = await fetch(API_URL);
       const responseData = await response.json();
-      setData(responseData?.items);
+      setData((prevData) => [...prevData, ...responseData?.items]);
+      setNextPageToken(responseData.nextPageToken || "");
     } catch (err) {
-      console.error("Error fetching videos:", error);
+      console.error("Error fetching videos:", err);
     } finally {
       setIsLoading(false);
     }
@@ -24,6 +31,12 @@ const Home = ({ isSidebarCollapsed }) => {
   useEffect(() => {
     fetchVideos();
   }, []);
+
+   useInfiniteScroll(() => {
+     if (nextPageToken) {
+      fetchVideos(nextPageToken);
+     }
+   });
 
   return (
     <div
@@ -36,10 +49,11 @@ const Home = ({ isSidebarCollapsed }) => {
       ) : (
         <>
           {data?.map((item, index) => {
-            return <VideoCard key={item?.id ? item?.id : index} video={item} />;
+            return <VideoCard key={`${item?.id}-${index}`} video={item} />;
           })}
         </>
       )}
+      <div id="loadMoreTrigger" style={{ height: "50px" }}></div>
     </div>
   );
 };
