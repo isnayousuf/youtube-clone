@@ -33,6 +33,7 @@ const Navbar = ({ setIsSidebarCollapsed, setIsRightSidebarOpen }) => {
       </div>
       <div className="nav-right flex-div gap-25">
         <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />
+
         <UserProfile handleProfileClick={handleShowRightSidebar} />
       </div>
     </nav>

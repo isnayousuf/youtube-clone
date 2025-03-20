@@ -1,8 +1,11 @@
 import {
+  Activity,
   BookOpenText,
   BookUser,
+  Cat,
   CircleDollarSign,
   CircleHelp,
+  Clapperboard,
   Gamepad2,
   Globe,
   House,
@@ -10,6 +13,7 @@ import {
   Languages,
   LogOut,
   MemoryStick,
+  MessageCircleQuestion,
   MessageSquareWarning,
   Music,
   Newspaper,
@@ -85,7 +89,7 @@ export const YTCategories = [
     ),
   },
   {
-    label: "Technology",
+    label: "Science & Tech",
     value: 28,
     icon: (
       <MemoryStick
@@ -125,6 +129,54 @@ export const YTCategories = [
     value: 25,
     icon: (
       <Newspaper
+        size={20}
+        strokeWidth={1.5}
+        absoluteStrokeWidth
+        className="side-icon"
+      />
+    ),
+  },
+  {
+    label: "Film & Animation",
+    value: 1,
+    icon: (
+      <Clapperboard
+        size={20}
+        strokeWidth={1.5}
+        absoluteStrokeWidth
+        className="side-icon"
+      />
+    ),
+  },
+  {
+    label: "Pets & Animals",
+    value: 15,
+    icon: (
+      <Cat
+        size={20}
+        strokeWidth={1.5}
+        absoluteStrokeWidth
+        className="side-icon"
+      />
+    ),
+  },
+  {
+    label: "Howto & Style",
+    value: 26,
+    icon: (
+      <MessageCircleQuestion
+        size={20}
+        strokeWidth={1.5}
+        absoluteStrokeWidth
+        className="side-icon"
+      />
+    ),
+  },
+  {
+    label: "Nonprofits & Activism",
+    value: 29,
+    icon: (
+    <Activity 
         size={20}
         strokeWidth={1.5}
         absoluteStrokeWidth

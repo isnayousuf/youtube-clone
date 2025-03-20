@@ -6,6 +6,7 @@
   padding-left: var(--side-padding);
   padding-top: 80px;
   transition: all 0.5s ease-in-out;
+  overflow: scroll;
 }
 
 .shortcut-links, .subscribed-list {

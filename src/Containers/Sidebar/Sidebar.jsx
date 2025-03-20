@@ -1,8 +1,6 @@
-import {
-  User
-} from "lucide-react";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { PrimaryYoutubeLinks, SecondaryYoutubeLinks } from "../../Constants/constants.js";
 import { YTCategories } from "../../Constants/data.jsx";
 import "./Sidebar.css";
 
@@ -40,32 +38,27 @@ const Sidebar = ({ isSidebarCollapsed }) => {
         <div className="separator"></div>
       </div>
 
-      <div className="subscribed-list">
-        <h3>Subscribed</h3>
-        <div className="flex-div side-link">
-          <User strokeWidth={1.5} absoluteStrokeWidth size={24} />
-          <p>User1</p>
+    <div style={{ paddingTop: "30px",  display: `${isSidebarCollapsed ? 'none' : 'block'}`}}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px'}}>
+          {PrimaryYoutubeLinks.map((link, index) => {
+            return (
+              <a href={link.url} style={{ fontSize: "12px" }} key={index}>
+                {link?.linkText}
+              </a>
+            );
+          })}
+        </div>
+        <div style={{marginTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px'}}>
+          {SecondaryYoutubeLinks.map((link, index) => {
+            return (
+              <a href={link.url} style={{ fontSize: "12px" }} key={index}>
+                {link?.linkText}
+              </a>
+            );
+          })}
         </div>
 
-        <div className="flex-div side-link">
-          <User strokeWidth={1.5} absoluteStrokeWidth size={24} />
-          <p>User2</p>
-        </div>
-
-        <div className="flex-div side-link">
-          <User strokeWidth={1.5} absoluteStrokeWidth size={24} />
-          <p>User3</p>
-        </div>
-
-        <div className="flex-div side-link">
-          <User strokeWidth={1.5} absoluteStrokeWidth size={24} />
-          <p>User4</p>
-        </div>
-
-        <div className="flex-div side-link">
-          <User strokeWidth={1.5} absoluteStrokeWidth size={20} />
-          <p>User5</p>
-        </div>
+        <p style={{ fontSize: "12px", marginTop: '20px' }}>© 2025 Isna Yousuf</p>
       </div>
     </div>
   );
