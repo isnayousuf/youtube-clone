@@ -1,12 +1,79 @@
-# React + Vite
+YouTube Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A YouTube Clone built using React, Vite, and YouTube's Open API. This project features infinite scrolling, category-based feeds, search functionality, a 404 page, and full responsiveness.
 
-Currently, two official plugins are available:
+Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## Expanding the ESLint configuration
+Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Installation
+
+Usage
+
+Environment Variables
+
+Deployment
+
+Contributing
+
+License
+
+Features
+
+✅ Home Page - Displays 20 records initially with infinite scrolling for dynamic content loading.
+✅ Sidebar Navigation - Includes various categories for browsing different types of content.
+✅ Category-Based Feed - Updates the feed page with infinite scrolling based on the selected category.
+✅ Search Functionality - Integrated into the navbar to search for videos.
+✅ 404 Page - Displays a custom 404 page for undefined routes.
+✅ Responsive Design - Ensures a seamless experience across devices.
+
+Tech Stack
+
+Frontend: React (Created with vite@latest and managed with yarn)
+
+Routing: React Router DOM
+
+Icons: Lucide React
+
+API: YouTube Open API
+
+Installation
+
+Clone the repository:
+
+Install dependencies:
+
+Start the development server:
+
+Usage
+
+Browse trending videos on the home page.
+
+Click on categories in the sidebar to explore specific video feeds.
+
+Use the search bar to find specific videos.
+
+Scroll down to load more videos dynamically.
+
+Navigate between pages using React Router.
+
+Environment Variables
+
+Create a .env file in the root directory and add your YouTube API key:
+
+Deployment
+
+To build the project for production:
+
+To preview the production build:
+
+Contributing
+
+Contributions are welcome! Feel free to fork this repository, create a feature branch, and submit a pull request.
+
+License
+
+This project is licensed under the MIT License.
+
