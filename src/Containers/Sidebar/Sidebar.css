@@ -161,4 +161,10 @@
     display: none;
   }
 
+
+ .right-sidebar {
+  width: 65%;
+  top: 8.5vh;
+ }
+
 }
