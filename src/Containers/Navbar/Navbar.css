@@ -47,8 +47,7 @@ nav {
     display: none;
   }
 
-   .nav-right img {
-    /* check this with your icons */
+   .nav-right .user-profile-icon, .notification-icon {
     display: none; 
   }
 
@@ -56,8 +55,9 @@ nav {
     width: 90px;
   }
 
-  .nav-middle .search-box input {
-    width: 100px;
+  .nav-middle .search-box  {
+    width: 190px;
+    margin-left: 10px;
   }
   
 }

@@ -32,7 +32,7 @@ const Navbar = ({ setIsSidebarCollapsed, setIsRightSidebarOpen }) => {
         <SearchBar />
       </div>
       <div className="nav-right flex-div gap-25">
-        <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth />
+        <Bell size={20} strokeWidth={1.5} absoluteStrokeWidth className="notification-icon"/>
 
         <UserProfile handleProfileClick={handleShowRightSidebar} />
       </div>
