@@ -8,33 +8,35 @@ const PageNotFound = ({ isSidebarCollapsed }) => {
       <div className="flex-div img-container" />
 
       <h1 className="mb-5">Oops! This Page Isn't Ready Yet</h1>
-      <p className="text-lg mb-6 text-gray-400 max-w-md">
+      <p>
         This feature is still in development—hang tight, it's coming soon! 🚀 In
-        the meantime, why not take a peek at the{" "}
+        the meantime, why not take a peek at the
         <a
           href="https://github.com/isnayousuf/youtube-clone"
           className="link-text"
           target="_blank"
         >
           source code
-        </a>{" "}
+        </a>
         and see what's in the works?
       </p>
       <p>
         Tired of staring at endless lines of code? Maybe you'd enjoy exploring
-        some of my other{" "}
+        some of my other
         <a
           href="https://www.isnayousuf.com/#projects"
           className="link-text"
           target="_blank"
         >
           projects
-        </a>{" "}
+        </a>
         in my portfolio instead!
       </p>
 
       <div className="gap-4">
-        Not in the mood for any of that? No worries, let's get you back home!
+        <p>
+          Not in the mood for any of that? No worries, let's get you back home!
+        </p>
       </div>
 
       <Link to="/">
